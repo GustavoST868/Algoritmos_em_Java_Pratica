@@ -1,9 +1,14 @@
 
 package main;
+import java.util.Scanner;
 
 
 public class Main {
     public static class DataBase {
+        
+        
+        //object of Scanner class
+        Scanner scanner = new Scanner(System.in);
         
         
         // Atributos
@@ -98,17 +103,126 @@ public class Main {
         System.out.println("\nDatabase doubles:");
         System.out.println("\n");
         DoublePrint();}
-           
+        
+        
+        public void Exchange_Doubles(){
+            
+        int num;
+        
+        //ask the user if he wants to change strings
+        System.out.println("want to exchage values doubles?\n1 - yes\n2 - no");
+        num = scanner.nextInt();
+        
+        if(num == 1){
+        int num2;
+        int num3;
+        double aux =0;
+        
+        
+        //exchange double values
+        System.out.println("Enter the values of the positions to be exchanged from 1 to 3: ");
+        num2 = scanner.nextInt();
+        
+        
+        System.out.println("Enter the values of the positions that will be exchanged from 1 to 3: ");
+        num3 = scanner.nextInt();
+        
+        
+        //exchande operations
+        aux = doubles[num3-1];
+        doubles[num3-1] = doubles[num2-1];
+        doubles[num2-1] = aux;
+        
+        
+        }else{System.out.println("Exit commandes conditionals");}}
+        
+        
+        public void Exchange_Ints(){
+            
+        int num;
+        
+        //ask the user if he wants to change strings
+        System.out.println("want to exchage values ins?\n1 - yes\n2 - no");
+        num = scanner.nextInt();
+        
+        if(num == 1){
+        int num2;
+        int num3;
+        int aux =0;
+        
+        
+        //exchange double values
+        System.out.println("Enter the values of the positions to be exchanged from 1 to 3: ");
+        num2 = scanner.nextInt();
+        
+        
+        System.out.println("Enter the values of the positions that will be exchanged from 1 to 3: ");
+        num3 = scanner.nextInt();
+        
+        
+        //exchande operations
+        aux = ints[num3-1];
+        ints[num3-1] = ints[num2-1];
+        ints[num2-1] = aux;
+        
+        
+        }else{System.out.println("Exit commandes conditionals");}}
+     
+        
+        public void ExchangeStrings(){
+            
+            
+        int num1;
+        
+        
+        //ask the user if he wants to change strings
+        System.out.println("want to exchage strings?\n1 - yes\n2 - no");
+        num1 = scanner.nextInt();
+        
+        
+        if(num1 == 1){
+        int num2;
+        int num3;
+        String aux ="";
+        
+        
+        //exchange double values
+        System.out.println("Enter the values of the positions to be exchanged from 1 to 3: ");
+        num2 = scanner.nextInt();
+        
+        
+        System.out.println("Enter the values of the positions that will be exchanged from 1 to 3: ");
+        num3 = scanner.nextInt();
+        
+        
+        //exchande operations
+        aux = strings[num3-1];
+        strings[num3-1] = strings[num2-1];
+        strings[num2-1] = aux;
+        
+        
+        }else{System.out.println("Exit commandes conditionals");}}
+        
+       
         
         //fuction to print doubles values
-        public void DoublePrint(){for(int i=0;i<3;i++){System.out.println(doubles[i]);}
+        public void DoublePrint(){for(int i=0;i<3;i++){
+            
+            System.out.println(doubles[i]);
+        
+        }}}
         
         
-        }}
+        
+    
  
 
     public static void main(String[] args) {
-        
+    Scanner scanner = new Scanner(System.in);
+    int control = 1; 
+    
+    
+    while(control == 1){
     //object of Database class
     DataBase db = new DataBase(0.0);
     
@@ -134,5 +248,20 @@ public class Main {
     //function to print all values
     db.PrintAll();
     
+    
+    //Exchande values
+    db.Exchange_Doubles();
+    db.ExchangeStrings();
+    db.Exchange_Ints();
+    
+    
+    
+    //function to print all values
+    db.PrintAll();
+    
+    //stay program
+    System.out.println("Do you want to exit the program?");
+    control = scanner.nextInt();
+    }
     
     }}
