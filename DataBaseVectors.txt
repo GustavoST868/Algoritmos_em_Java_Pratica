@@ -1,0 +1,83 @@
+public class main {
+    public static class DataBase {
+        
+        
+        // Atributos
+        double double_value;
+        int value_int;
+        String value_string;
+
+        
+        // Estrutura de armazenamento
+        String[] strings;
+        int[] ints;
+        double[] doubles;
+
+        
+        // Construtor
+        public DataBase(double double_value) {
+        this.double_value = double_value;
+        this.value_int = value_int;
+        this.value_string = value_string;
+        //declare the vectors
+        strings = new String[3];
+        ints = new int[3];
+        doubles = new double[3];
+        //reset the values
+        for(int i=0;i<3;i++){doubles[i]=0.0;strings[i]="";ints[i]=0;}
+        }
+        
+
+        //functions to reset the doubles
+        public void Resetdoubles() {
+        for (int i = 0; i < 3; i++){doubles[i]=0.0;}}
+        
+        //functions to reset the ints
+        public void ResetInts() {
+        for (int i = 0; i < 3; i++){ints[i]=0;}}
+        
+        
+        //functions to reset the strings
+        public void ResetStrings() {
+        for (int i = 0; i < 3; i++){strings[i]="";}}
+
+        
+        //function to store doubles values
+        public void getDouble(double double_value) {
+        if(doubles[0]==0.0){doubles[0]=double_value;
+        }else if(doubles[1] == 0.0) {doubles[1] = double_value;
+        } else if (doubles[2] == 0.0) {doubles[2] = double_value;}}
+        
+        
+        //function to store strings
+        public void getStrings(String value_string){
+        if (strings[0].equals("")){strings[0]=value_string;}
+        else if (strings[1].equals("")){strings[1]=value_string;}
+        else if (strings[2].equals("")){strings[2]=value_string;}}
+        
+        
+        // Função para armazenar valores ints
+        public void getInt(int value_int){
+        if (ints[0] == 0) {ints[0] = value_int;} 
+        else if (ints[1] == 0){ints[1] = value_int;} 
+        else if (ints[2] == 0) {ints[2] = value_int;}}
+
+        
+        //fuction to print strings
+        public void printStrings(){for(int i=0;i<3;i++) {System.out.println(strings[i]);}}
+        
+        
+        //fuction to print ints
+        public void PrintInt(){for(int i=0;i<3;i++) {System.out.println(ints[i]);}}
+           
+        
+        //fuction to print doubles values
+        public void DoublePrint(){for(int i=0;i<3;i++){System.out.println(doubles[i]);}
+        
+  
+        }}
+ 
+
+    public static void main(String[] args) {
+    DataBase db = new DataBase(0.0);  
+    }}
