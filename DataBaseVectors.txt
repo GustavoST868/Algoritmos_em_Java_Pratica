@@ -1,4 +1,8 @@
-public class main {
+
+package main;
+
+
+public class Main {
     public static class DataBase {
         
         
@@ -10,27 +14,41 @@ public class main {
         
         // Estrutura de armazenamento
         String[] strings;
-        int[] ints;
+        int   [] ints;
         double[] doubles;
 
         
         // Construtor
         public DataBase(double double_value) {
+            
+            
+        //standard    
         this.double_value = double_value;
-        this.value_int = value_int;
+        this.value_int    = value_int;
         this.value_string = value_string;
+        
+        
         //declare the vectors
         strings = new String[3];
-        ints = new int[3];
+        ints    = new int[3];
         doubles = new double[3];
+        
+        
         //reset the values
-        for(int i=0;i<3;i++){doubles[i]=0.0;strings[i]="";ints[i]=0;}
+        for(int i=0;i<3;i++){
+        doubles[i]=0.0;
+        strings[i]="";
+        ints[i]=0;}
+        
+        
         }
         
 
         //functions to reset the doubles
         public void Resetdoubles() {
-        for (int i = 0; i < 3; i++){doubles[i]=0.0;}}
+        for (int i = 0; i < 3; i++){
+        doubles[i]=0.0;}}
+        
         
         //functions to reset the ints
         public void ResetInts() {
@@ -69,15 +87,52 @@ public class main {
         
         //fuction to print ints
         public void PrintInt(){for(int i=0;i<3;i++) {System.out.println(ints[i]);}}
+        
+        
+        //function Print All
+        public void PrintAll(){
+        System.out.println("\nDatabase strings:");
+        printStrings();System.out.println("\n");
+        System.out.println("\nDatabase ints:");
+        PrintInt();
+        System.out.println("\nDatabase doubles:");
+        System.out.println("\n");
+        DoublePrint();}
            
         
         //fuction to print doubles values
         public void DoublePrint(){for(int i=0;i<3;i++){System.out.println(doubles[i]);}
         
-  
+        
         }}
  
 
     public static void main(String[] args) {
-    DataBase db = new DataBase(0.0);  
+        
+    //object of Database class
+    DataBase db = new DataBase(0.0);
+    
+    
+    //test double values
+    db.getDouble(1.1);
+    db.getDouble(1.2);
+    db.getDouble(1.3);
+    
+    
+    //test int values
+    db.getInt(1);
+    db.getInt(2);
+    db.getInt(3);
+    
+    
+    //test strings
+    db.getStrings("oi");
+    db.getStrings("oii");
+    db.getStrings("oiii");
+    
+    
+    //function to print all values
+    db.PrintAll();
+    
+    
     }}
